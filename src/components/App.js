@@ -1,4 +1,3 @@
-
 import envelop from "../assets/envelop.svg";
 import github from "../assets/github.svg";
 import instagram from "../assets/instagram.svg";
@@ -9,12 +8,10 @@ import twitter from "../assets/twitter.svg";
 
 import "../sass/main.scss";
 
-
 const App = () => {
   return (
     <>
-      
-    <div className="navigation">
+<div className="navigation">
       <input type="checkbox" className="navigation__checkbox" id="nav-toggle" />
       <label for="nav-toggle" className="navigation__button">
         <span className="navigation__icon">&nbsp;</span>
@@ -23,9 +20,7 @@ const App = () => {
       <nav className="navigation__nav">
         <ul className="navigation__list">
           <li className="navigation__item">
-            <a href="#about" className="navigation__link"
-              ><span>01</span>About Me</a
-            >
+            <a href="#about" className="navigation__link"><span>01</span>About Me</a>
           </li>
           <li className="navigation__item">
             <a href="#" className="navigation__link"><span>02</span>Projects</a>
@@ -66,34 +61,27 @@ const App = () => {
   <main className="hero">
       <div className="hero__content">
         <p className="hero__content__greeting">Hello there, I'm</p>
-        <h1 className="hero__content__name">Nitin Ranganath</h1>
+        <h1 className="hero__content__name">Farouk Touil</h1>
         <h2 className="hero__content__headline">Web Developer & Designer</h2>
         <p className="hero__content__about">
           I'm an avid web developer experienced in building full-stack
           responsive web applications which your customers would love using! Let
           me take you on a journey from development to deployment.
         </p>
-        <a href="#"
-          ><button className="hero__content__button">Contact me</button></a
-        >
-        <a href="#"
-          ><button className="hero__content__button--outlined">
+        <a href="#"><button className="hero__content__button">Contact me</button></a>
+        <a href="#"><button className="hero__content__button--outlined">
             Download Resume
-          </button></a
-        >
+          </button></a>
       </div>
       <div className="hero__socials">
         <div className="hero__socials__content">
-          <a href="mailto:nitinranganath@gmail.com">nitinranganath@gmail.com</a>
+          <a href="mailto:nitinranganath@gmail.com">farouktouil@hotmail.com</a>
         </div>
       </div>
     </main>
 
 
-
-
-
-    <section className="about" id="about">
+<section className="about" id="about">
     <div className="about__content container">
       <div className="about__content__icons">
         <div className="about__content__icons__icon">
@@ -161,6 +149,8 @@ const App = () => {
           <p>Java</p>
         </div>
       </div>
+      
+
       <div className="about__content__text">
         <h2 className="about__content__text__heading">About Me</h2>
         <p className="about__content__text__paragraph">
@@ -176,9 +166,7 @@ const App = () => {
         </p>
         <p className="about__content__text__skill">
           🗄️ Developing
-          <span className="accent-bg"
-            >robust, efficient and secure backend API</span
-          >
+          <span className="accent-bg">robust, efficient and secure backend API</span>
           with <span className="bold">NoSQL database connectivity</span>
         </p>
         <p className="about__content__text__skill">
@@ -187,12 +175,17 @@ const App = () => {
           to achieve top notch <span className="bold">user experience</span>
         </p>
       </div>
+
+
+
+
+
     </div>
   </section>
 
 
-  
-<section className="contact" id="contact">
+
+     <section className="contact" id="contact">
     <div className="contact__container">
       <div className="contact__card">
         <div className="contact__card__content">
@@ -200,9 +193,8 @@ const App = () => {
           <ul className="contact__card__list">
             <li className="contact__card__list__item">
               <span><img src={office} alt="Address icon" /></span>
-              <span
-                >Film City Road, Malad East<br />Mumbai, Maharashtra<br />India
-                - 400097</span >
+              <span>City El Bader N° 693  <br />Bachdjerah, Algeris<br />Algeria
+                - 16830</span>
             </li>
             <li className="contact__card__list__item">
               <span
@@ -221,19 +213,13 @@ const App = () => {
             <a href="#"><img src={github} alt="GitHub icon" /></a>
           </li>
           <li>
-            <a href="#"
-              ><img src={linkedin} alt="LinkedIn icon"
-            /></a>
+            <a href="#"><img src={linkedin} alt="LinkedIn icon"/></a>
           </li>
           <li>
-            <a href="#"
-              ><img src={twitter} alt="Twitter icon"
-            /></a>
+            <a href="#"><img src={twitter} alt="Twitter icon"/></a>
           </li>
           <li>
-            <a href="#"
-              ><img src={instagram} alt="Instagram icon"
-            /></a>
+            <a href="#"><img src={instagram} alt="Instagram icon"/></a>
           </li>
         </ul>
       </div>
@@ -267,12 +253,8 @@ const App = () => {
       </div>
     </div>
   </section>
-
-
-
-  </>
+    </>
   );
 };
 
 export default App;
-
