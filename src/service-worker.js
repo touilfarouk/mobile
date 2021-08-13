@@ -1,11 +1,13 @@
-const version = 2;
+const version = 4;
 
 self.addEventListener('install', (ev) => {
+  console.log('FAROUK TOUIL SW received', ev);
   //installed
   //ev.waitUntil()
   //load pre-cache
 });
 self.addEventListener('activate', (ev) => {
+  console.log('FAROUK TOUIL SW received', ev);
   //activating
   // self.skipWaiting();
   //ev.waitUntil();

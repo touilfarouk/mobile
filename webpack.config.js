@@ -1,9 +1,11 @@
 const path = require("path");
+const  WebpackPwaManifest = require('webpack-pwa-manifest');
+const { ServiceWorkerPlugin } = require("service-worker-webpack");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const WorkboxPlugin = require("workbox-webpack-plugin");
+
 
 
 let mode = "development";
@@ -14,10 +16,27 @@ const plugins = [
   new HtmlWebpackPlugin({
     template: "./src/index.html",
   }),
-  new WorkboxPlugin.GenerateSW({
-    clientsClaim: true,
-    skipWaiting: true,
-  }),
+  new ServiceWorkerPlugin(),
+  new WebpackPwaManifest({
+    name: 'My Progressive Web App',
+    short_name: 'MyPWA',
+    description: 'My awesome Progressive Web App!',
+    background_color: '#2d3748',
+    crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
+    icons: [
+      {
+        src: path.resolve('src/img/icons/icon.png'),
+        sizes: [72,96,128,144,152,192,384,512] // multiple sizes
+      },
+    
+      {
+        src: path.resolve('src/img/maskable-icon.png'),
+        size: '159x159',
+        purpose: 'maskable'
+      }
+    ]
+  })
+ 
 ];
 
 if (process.env.NODE_ENV === "production") {
@@ -38,10 +57,9 @@ module.exports = {
   // This is unnecessary in Webpack 5, because it's the default.
   // However, react-refresh-webpack-plugin can't find the entry without it.
   entry: [
-    
     './src/index.js',
+    './src/js/app.js',
     './src/js/animations.js'
-
 ],
 
   output: {
@@ -49,11 +67,13 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     // this places all images processed in an assets folder
     assetModuleFilename: "assets/[hash][ext][query]",
+    publicPath: '',
   },
 
   module: {
     rules: [
       {
+      
         test: /\.(s[ac]|c)ss$/i,
         use: [
           {

@@ -1,3 +1,5 @@
+import Preloader from "./Preloader";
+import Navigation from "./Navigation";
 import envelop from "../assets/envelop.svg";
 import github from "../assets/github.svg";
 import instagram from "../assets/instagram.svg";
@@ -11,47 +13,10 @@ import "../sass/main.scss";
 const App = () => {
   return (
     <>
-<div className="navigation">
-      <input type="checkbox" className="navigation__checkbox" id="nav-toggle" />
-      <label htmlFor="nav-toggle" className="navigation__button">
-        <span className="navigation__icon">&nbsp;</span>
-      </label>
-      <div className="navigation__background"></div>
-      <nav className="navigation__nav">
-        <ul className="navigation__list">
-          <li className="navigation__item">
-            <a href="#about" className="navigation__link"><span>01</span>About Me</a>
-          </li>
-          <li className="navigation__item">
-            <a href="#" className="navigation__link"><span>02</span>Projects</a>
-          </li>
-          <li className="navigation__item">
-            <a href="#" className="navigation__link"><span>03</span>Articles</a>
-          </li>
-          <li className="navigation__item">
-            <a href="#" className="navigation__link"><span>04</span>Testimonials</a>
-          </li>
-          <li className="navigation__item">
-            <a href="#" className="navigation__link"><span>05</span>Contact</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+<Navigation/>
 
-    <div className="preloader">
-    <div className="preloader__content">
-      <h1 className="preloader__hide">
-        <span className="preloader__text">I Craft</span>
-      </h1>
-      <h1 className="preloader__hide">
-        <span className="preloader__text">Websites That</span>
-      </h1>
-      <h1 className="preloader__hide">
-        <span className="preloader__text">You'd Love Using!</span>
-      </h1>
-    </div>
-    </div>
-    
+ <Preloader/>
+
     <div className="preloader__slider">
       <h4>Welcome to</h4>
       <h1>Farouk Touil's</h1>
@@ -60,7 +25,8 @@ const App = () => {
  
   <main className="hero">
       <div className="hero__content">
-        <p className="hero__content__greeting">The webpage is currently <span class="isOnOff"></span></p>
+      <p  className="hero__content"></p>
+      <p className="hero__content__greeting">The webpage is currently <span className="isOnOff"></span></p>
         <p className="hero__content__greeting">Hello there, I'm</p>
         <h1 className="hero__content__name">Farouk Touil</h1>
         <h2 className="hero__content__headline">Web Developer & Designer</h2>
