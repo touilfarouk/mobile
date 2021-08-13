@@ -6,10 +6,10 @@
   "scripts": {
     "start": "cross-env SERVE=true webpack serve",
     "watch": "webpack --watch",
-    "build1": "cat src/manifest.json >> dist/manifest.json",
-    "build": "cross-env NODE_ENV=production webpack && cat src/js/sw.js >> dist/sw.js",
+    "build": "cross-env NODE_ENV=production webpack",
     "build-dev": "webpack",
-    "clean": "rm -rf ./dist"
+    "clean": "rm -rf ./dist",
+    "post": "git add .  && git commit -m'test' && git  push"
   },
   "author": "Jimmy DC",
   "license": "ISC",
@@ -36,8 +36,8 @@
     "webpack": "^5.11.1",
     "webpack-cli": "^4.3.0",
     "webpack-dev-server": "^3.11.0",
-    "webpack-pwa-manifest": "^4.3.0",
-    "workbox-webpack-plugin": "^6.2.3"
+    "webpack-pwa-manifest": "^4.3.0"
+   
   },
   "dependencies": {
     "react": "^17.0.1",
